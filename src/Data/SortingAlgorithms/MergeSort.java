@@ -1,4 +1,6 @@
-package Data;
+package Data.SortingAlgorithms;
+
+import Data.ArrayTools;
 
 @SuppressWarnings({"WeakerAccess", "Duplicates", "unused"}) //Most functions should be available
 public class MergeSort {

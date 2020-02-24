@@ -1,4 +1,6 @@
-package Data;
+package Data.SortingAlgorithms;
+
+import Data.ArrayTools;
 
 @SuppressWarnings({"unused"})
 public class SelectionSort {
