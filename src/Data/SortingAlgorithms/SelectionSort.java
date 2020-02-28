@@ -1,12 +1,11 @@
 package Data.SortingAlgorithms;
 
-import Data.ArrayTools;
-
 @SuppressWarnings({"unused"})
 public class SelectionSort {
 
     public static byte[] selectionSort(byte[] input) {
-        byte[] output = ArrayTools.copyOf(input);
+        byte[] output = new byte[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -25,7 +24,8 @@ public class SelectionSort {
     }
 
     public static short[] selectionSort(short[] input) {
-        short[] output = ArrayTools.copyOf(input);
+        short[] output = new short[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -44,7 +44,8 @@ public class SelectionSort {
     }
 
     public static int[] selectionSort(int[] input) {
-        int[] output = ArrayTools.copyOf(input);
+        int[] output = new int[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -63,7 +64,8 @@ public class SelectionSort {
     }
 
     public static long[] selectionSort(long[] input) {
-        long[] output = ArrayTools.copyOf(input);
+        long[] output = new long[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -82,7 +84,8 @@ public class SelectionSort {
     }
 
     public static float[] selectionSort(float[] input) {
-        float[] output = ArrayTools.copyOf(input);
+        float[] output = new float[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -101,7 +104,8 @@ public class SelectionSort {
     }
 
     public static double[] selectionSort(double[] input) {
-        double[] output = ArrayTools.copyOf(input);
+        double[] output = new double[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -120,7 +124,8 @@ public class SelectionSort {
     }
 
     public static char[] selectionSort(char[] input) {
-        char[] output = ArrayTools.copyOf(input);
+        char[] output = new char[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int smallestIndex = i;
@@ -138,8 +143,10 @@ public class SelectionSort {
         return output;
     }
 
+    @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> T[] selectionSort(T[] input) {
-        T[] output = ArrayTools.copyOf(input);
+        T[] output = (T[]) new Comparable[input.length];
+        System.arraycopy(input, 0, output, 0, input.length);
 
         for(int i = 0; i < output.length - 1; i++) {
             int minimum = i;
