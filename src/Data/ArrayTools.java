@@ -3,6 +3,60 @@ package Data;
 @SuppressWarnings({"WeakerAccess", "unused"}) //All functions here should be available, but might not be used
 public class ArrayTools {
 
+    public static <T> void swap(T[] input, int index1, int index2) {
+        T tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(byte[] input, int index1, int index2) {
+        byte tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(short[] input, int index1, int index2) {
+        short tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(int[] input, int index1, int index2) {
+        int tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(long[] input, int index1, int index2) {
+        long tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(float[] input, int index1, int index2) {
+        float tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(double[] input, int index1, int index2) {
+        double tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(boolean[] input, int index1, int index2) {
+        boolean tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
+    public static void swap(char[] input, int index1, int index2) {
+        char tmp = input[index1];
+        input[index1] = input[index2];
+        input[index2] = tmp;
+    }
+
     public static <T> T[] copyOf(T[] input) {
         return copyOfRange(input, 0, input.length);
     }

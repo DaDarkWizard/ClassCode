@@ -7,6 +7,16 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Relations {
+
+    public static <T extends Comparable<T>> Relation<T> copyOf(Relation<T> relation) {
+        SortedRelation<T> output = new SortedRelation<>(relation.getSource());
+        for(RelationPair<T> pair : relation) {
+            output.add(pair.getKey(), pair.getValue());
+        }
+
+        return output;
+    }
+
     public static <T extends Comparable<T>> Relation<T> diagonal(Set<T> base) {
         SortedRelation<T> output = new SortedRelation<>(base);
         for(T item : base) {
@@ -28,10 +38,12 @@ public class Relations {
     }
 
     public static <T extends Comparable<T>> Relation<T> transitiveClosure(Relation<T> relation) {
-        Relation<T> output = relation.of(relation);
-
+        Relation<T> output = copyOf(relation);
+        Relation<T> current = relation.of(relation);
+        output = output.union(current);
         for(int i = 1; i < relation.getSource().size(); i++) {
-            output = output.union(output.of(relation));
+            current = relation.of(current);
+            output = output.union(current);
         }
 
         return output;
