@@ -52,8 +52,8 @@ public class QuickSort {
         return output;
     }
 
-    @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> T[] quickSort(T[] input) {
+        @SuppressWarnings("unchecked")
         T[] output = (T[]) new Comparable[input.length];
         System.arraycopy(input, 0, output, 0, input.length);
         quickSort(output, 0, output.length - 1);
