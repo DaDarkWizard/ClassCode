@@ -2,7 +2,7 @@ package Data.SortingAlgorithms;
 
 import Data.ArrayTools;
 
-@SuppressWarnings({"unused"}) //Most functions should be available
+@SuppressWarnings({"unused", "Duplicates"}) //Most functions should be available
 public class MergeSort {
 
     @SuppressWarnings("unchecked")
