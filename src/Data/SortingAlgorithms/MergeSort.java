@@ -5,8 +5,8 @@ import Data.ArrayTools;
 @SuppressWarnings({"unused", "Duplicates"}) //Most functions should be available
 public class MergeSort {
 
-    @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> T[] mergeSort(T[] input) {
+        @SuppressWarnings("unchecked")
         T[] output = (T[]) new Comparable[input.length];
 
         if(output.length < 2) {
