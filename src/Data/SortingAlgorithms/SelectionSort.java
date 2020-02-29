@@ -143,8 +143,8 @@ public class SelectionSort {
         return output;
     }
 
-    @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> T[] selectionSort(T[] input) {
+        @SuppressWarnings("unchecked")
         T[] output = (T[]) new Comparable[input.length];
         System.arraycopy(input, 0, output, 0, input.length);
 
