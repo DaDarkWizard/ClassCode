@@ -1,7 +1,15 @@
 package Data.SortingAlgorithms;
 
+import java.util.Arrays;
+
 @SuppressWarnings({"Duplicates", "unused"})
 public class InsertionSort {
+
+    //ToDo: Fix sort based on eclipse code
+    public static void main(String[] args) {
+        Integer[] box = {98, 123, 24, 23, 1};
+        System.out.println(Arrays.deepToString(insertionSort(box)));
+    }
 
     public static byte[] insertionSort(byte[] input) {
         byte[] output = new byte[input.length];

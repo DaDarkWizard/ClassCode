@@ -1,5 +1,7 @@
 package Data;
 
+import java.lang.reflect.Array;
+
 @SuppressWarnings({"WeakerAccess", "unused"}) //All functions here should be available, but might not be used
 public class ArrayTools {
 
@@ -57,10 +59,12 @@ public class ArrayTools {
         input[index2] = tmp;
     }
 
+    /*
     public static <T> T[] copyOf(T[] input) {
         return copyOfRange(input, 0, input.length);
     }
 
+    */
     public static byte[] copyOf(byte[] input) {
         return copyOfRange(input, 0, input.length);
     }
@@ -93,11 +97,34 @@ public class ArrayTools {
         return copyOfRange(input, 0, input.length);
     }
 
-    @SuppressWarnings("unchecked")
+    //Todo fix array tools
     public static <T> T[] copyOfRange(T[] input, int from, int to) {
+        Class<? extends T[]> newType = (Class<? extends T[]>) input.getClass();
+        /*
+        @SuppressWarnings("unchecked")
+        T[] copy = ((Object)newType == (Object)Object[].class)
+                ? (T[]) new Object[newLength]
+                : VMArray.createObjectArray(componentType, length); //(T[]) Array.newInstance(newType.getComponentType(), newLength);
+        System.arraycopy(original, 0, copy, 0,
+                Math.min(original.length, newLength));
+        return copy;
+*/
+
         T[] output = (T[]) new Object[to - from + 1];
         System.arraycopy(input, from, output, 0, output.length);
         return output;
+    }
+
+    static native Object boop();
+
+    public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
+        @SuppressWarnings("unchecked")
+        T[] copy = ((Object)newType == (Object)Object[].class)
+                ? (T[]) new Object[newLength]
+                : (T[]) Array.newInstance(newType.getComponentType(), newLength);
+        System.arraycopy(original, 0, copy, 0,
+                Math.min(original.length, newLength));
+        return copy;
     }
 
     public static int[] copyOfRange(int[] input, int from, int to) {
